@@ -1,0 +1,86 @@
+
+
+---
+driver:
+  name: vagrant
+  box_url: /Users/v0s005q/Documents/vaibhav/box/win2012_r2_chef12_11_18.box
+
+provisioner:
+  name: chef_solo
+
+platforms:
+  - name: windows-2012r2
+
+suites:
+  - name: default
+    run_list:
+      - recipe[iis-website::enable]
+      - recipe[iis-website::remove_default_website]
+      - recipe[iis-website::site]
+    cookbook_path: /Users/v0s005q/Documents/vaibhav/circuit-oneops-1/components/cookbooks
+    attributes:
+      workorder:
+        rfcCi:
+          ciAttributes:
+            binding_type: https
+            runtime_version: v4.0
+            binding_port: 443
+            identity_type: ApplicationPoolIdentity
+            physical_path: C:\apps
+        box:
+          ciName: iis-website-441810-1
+          ciId: 449001
+        payLoad:
+          DependsOn: []
+      iis-website:
+         compression_max_disk_usage: 100
+         static_mime_types: '{".dat" : "application/text" , ".fat" : "application/octet-stream"}'
+         runtime_version: v4.0
+         requestfiltering_file_extension_allow_unlisted: 'true'
+         process_model_password:
+         dc_cpu_usage_to_reenable: 50
+         enable_cgi: false
+         identity_type: ApplicationPoolIdentity
+         binding_type: http
+         requestfiltering_allow_high_bit_characters: 'true'
+         period: Daily
+         session_time_out: 20
+         version: latest
+         anonymous_authentication: 'true'
+         compresion_min_file_size: 2400
+         requestfiltering_verbs: '{ "TRACE": "false" }'
+         process_model_user_name:
+         session_state_cookie_name: ASP.NET_SessionId
+         logformat: W3C
+         handler_mappings_name:
+         sc_cpu_usage_to_reenable: 50
+         dc_cpu_usage_to_disable: 90
+         sc_level: 7
+         physical_path: c:\apps
+         log_file_directory: c:\logs
+         enable_static_compression: 'true'
+         handler_mappings_path:
+         session_state_cookieless: UseCookies
+         requestfiltering_max_url: 4096
+         handler_mappings_script_processor:
+         enabled: 'true'
+         enable_dynamic_compression: 'true'
+         logtargetw3c: 1
+         requestfiltering_allow_double_escaping: 'false'
+         url_compression_dc_before_cache: 'false'
+         repository_url: http://repo.wal-mart.com/service/local/nuget/nuget-snapshots/
+         sc_cpu_usage_to_disable: 90
+         default_document_enabled: 'true'
+         handler_mappings_modules:
+         default_document_list: '{}'
+         windows_authentication: 'false'
+         requestfiltering_max_allowed_content_length: 30000000
+         binding_port: 80
+         add_module_mapping: 'false'
+         dc_file_directory: c:\logs\IISTemporaryCompressedFiles
+         sc_file_directory: c:\logs\IISTemporaryCompressedFiles
+         requestfiltering_max_query_string: 2048
+         dc_level: 0
+         package_name: AFNetSampleApplication
+         sc_mime_types: '{"text/*" : "true", "message/*" : "true", "application/x-javascript":"true" , "application/atom+xml" : "true" , "application/json " : "true" , "application/xml" : "true" , "*/*" : "false"  }'
+         dc_mime_types: '{"text/*" : "true", "message/*" : "true", "application/x-javascript" : "true", "application/xml" : "true", "*/*" : "false"  }'

@@ -1,0 +1,12 @@
+<<<<<<< HEAD
+source 'http://rubygems.org'
+
+gem 'oneops-admin', '1.0.0'
+
+
+=======
+source 'https://rubygems.org'
+
+gem "test-kitchen"
+gem "kitchen-vagrant"
+>>>>>>> added tests for website

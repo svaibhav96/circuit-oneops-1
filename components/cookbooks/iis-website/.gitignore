@@ -1,0 +1,34 @@
+<<<<<<< HEAD
+Gemfile.lock
+.project
+.idea
+.chef
+.arcconfig
+**/.DS_Store
+.rspec
+.DS_Store
+=======
+*~
+*#
+.#*
+\#*#
+.*.sw[a-z]
+*.un~
+pkg/
+>>>>>>> added tests for website
+
+# Berkshelf
+.vagrant
+/cookbooks
+Berksfile.lock
+
+# Bundler
+<<<<<<< HEAD
+=======
+Gemfile.lock
+>>>>>>> added tests for website
+bin/*
+.bundle/*
+
+.kitchen/
+.kitchen.local.yml

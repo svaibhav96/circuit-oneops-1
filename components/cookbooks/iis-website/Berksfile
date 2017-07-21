@@ -1,0 +1,7 @@
+source "https://supermarket.chef.io"
+
+#metadata
+
+cookbook 'iis', path: '../iis'
+cookbook 'artifact', path: '../artifact'
+cookbook 'iis-website', path: '../iis-website'
